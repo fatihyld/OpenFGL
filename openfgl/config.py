@@ -17,7 +17,7 @@ supported_graph_fl_task = ["graph_cls", "graph_reg"]
 supported_subgraph_fl_task = ["node_cls", "link_pred", "node_clust"]
 
 
-supported_fl_algorithm = ["isolate", "fedavg", "fedprox", "scaffold", "moon", "feddc", "fedproto", "fedtgp", "fedpub", "fedstar", "fedgta", "fedtad", "gcfl_plus", "fedsage_plus", "adafgl", "feddep", "fggp", "fgssl", "fedgl"]
+supported_fl_algorithm = ["isolate", "fedavg", "fedprox", "scaffold", "moon", "feddc", "fedproto", "fedtgp", "fedpub", "fedstar", "fedgta", "fedtad", "gcfl_plus", "fedsage_plus", "adafgl", "feddep", "fggp", "fgssl", "fedgl", "fedala"]
 
 
 supported_metrics = ["accuracy", "precision", "f1", "recall", "auc", "ap", "clustering_accuracy", "nmi", "ari"]
@@ -60,6 +60,11 @@ parser.add_argument("--num_clients", type=int, default=10)
 parser.add_argument("--num_rounds", type=int, default=100)
 parser.add_argument("--fl_algorithm", type=str, default="fedavg", choices=supported_fl_algorithm)
 parser.add_argument("--client_frac", type=float, default=1.0)
+parser.add_argument("--rand_percent", type=int, default=80)
+parser.add_argument("--layer_idx", type=int, default=0)
+parser.add_argument("--eta", type=float, default=1.0)
+parser.add_argument("--threshold", type=float, default=0.1)
+parser.add_argument("--num_pre_loss", type=int, default=10)
 
 
 # simulation settings
