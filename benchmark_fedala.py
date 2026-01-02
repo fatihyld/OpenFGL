@@ -62,7 +62,7 @@ class Args:
         self.threshold = 0.1
         self.num_pre_loss = 5
 
-dataset_list = ["Cora", "CiteSeer", "PubMed", "Computers", "Photo", "CS", "Physics"]
+dataset_list = ["Cora", "CiteSeer", "PubMed", "Photo", "Computers", "ogbn-products", "Chameleon", "Actor", "Amazon-ratings"]
 results = {}
 
 for dataset in dataset_list:
