@@ -17,7 +17,7 @@ supported_graph_fl_task = ["graph_cls", "graph_reg"]
 supported_subgraph_fl_task = ["node_cls", "link_pred", "node_clust"]
 
 
-supported_fl_algorithm = ["isolate", "fedavg", "fedprox", "scaffold", "moon", "feddc", "fedproto", "fedtgp", "fedpub", "fedstar", "fedgta", "fedtad", "gcfl_plus", "fedsage_plus", "adafgl", "feddep", "fggp", "fgssl", "fedgl", "fedala"]
+supported_fl_algorithm = ["isolate", "fedavg", "fedprox", "scaffold", "moon", "feddc", "fedproto", "fedtgp", "fedpub", "fedstar", "fedgta", "fedtad", "gcfl_plus", "fedsage_plus", "adafgl", "feddep", "fggp", "fgssl", "fedgl", "fedala", "fedala_s"]
 
 
 supported_metrics = ["accuracy", "precision", "f1", "recall", "auc", "ap", "clustering_accuracy", "nmi", "ari"]
@@ -65,6 +65,7 @@ parser.add_argument("--layer_idx", type=int, default=0)
 parser.add_argument("--eta", type=float, default=1.0)
 parser.add_argument("--threshold", type=float, default=0.1)
 parser.add_argument("--num_pre_loss", type=int, default=10)
+parser.add_argument("--ala_beta", type=float, default=0.0, help="Beta for FedALA-S temporal smoothing")
 
 
 # simulation settings

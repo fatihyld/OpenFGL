@@ -5,7 +5,7 @@ import random
 import numpy as np
 
 class ALA:
-    def __init__(self, cid, loss, train_data, batch_size, rand_percent, layer_idx, eta, device, threshold, num_pre_loss):
+    def __init__(self, cid, loss, train_data, batch_size, rand_percent, layer_idx, eta, device, threshold, num_pre_loss, beta=0.0):
         self.cid = cid
         self.loss = loss
         self.train_data = train_data
@@ -16,6 +16,7 @@ class ALA:
         self.threshold = threshold
         self.num_pre_loss = num_pre_loss
         self.device = device
+        self.beta = beta
 
         self.weights = None # The learned weights
         self.start_phase = True
@@ -97,7 +98,22 @@ class ALA:
             
         # Update weights
         with torch.no_grad():
-            self.weights = [w.clone() for w in learned_weights]
+            if self.beta > 0 and not self.start_phase:
+                 # FedALA-S: Apply temporal smoothing
+                 # alpha(t) = (1 - beta) * alpha_new + beta * alpha(t-1)
+                 # alpha_new is learned_weights, alpha(t-1) is self.weights (before update)
+                 
+                 # DEBUG PRINT
+                 # print(f"[ALA Debug] Client {self.cid}: Smoothing active. Beta={self.beta}. First weight old: {self.weights[0].flatten()[:3]}, new: {learned_weights[0].flatten()[:3]}")
+                 
+                 self.weights = [(1 - self.beta) * w_new + self.beta * w_old 
+                                 for w_new, w_old in zip(learned_weights, self.weights)]
+            else:
+                 # if self.beta > 0:
+                 #    print(f"[ALA Debug] Client {self.cid}: First round or start phase. Beta={self.beta}. No smoothing yet.")
+                 self.weights = [w.clone() for w in learned_weights]
+            
+            self.start_phase = False
             
         # Update local model
         with torch.no_grad():

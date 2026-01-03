@@ -4,9 +4,9 @@ import copy
 from openfgl.flcore.base import BaseClient
 from openfgl.flcore.fedala.ala import ALA
 
-class FedALAClient(BaseClient):
+class FedALASClient(BaseClient):
     def __init__(self, args, client_id, data, data_dir, message_pool, device):
-        super(FedALAClient, self).__init__(args, client_id, data, data_dir, message_pool, device)
+        super(FedALASClient, self).__init__(args, client_id, data, data_dir, message_pool, device)
         
         # Set default args if not present
         if not hasattr(self.args, 'rand_percent'): self.args.rand_percent = 80
@@ -14,9 +14,10 @@ class FedALAClient(BaseClient):
         if not hasattr(self.args, 'eta'): self.args.eta = 1.0
         if not hasattr(self.args, 'threshold'): self.args.threshold = 0.1
         if not hasattr(self.args, 'num_pre_loss'): self.args.num_pre_loss = 10
-
-
-        if not hasattr(self.args, 'ala_beta'): self.args.ala_beta = 0.0
+        
+        # FedALA-S specific: Default beta to 0.8 if not provided or 0
+        if not hasattr(self.args, 'ala_beta') or self.args.ala_beta == 0.0:
+            self.args.ala_beta = 0.3
 
         self.ala = ALA(self.client_id, self.task.loss_fn, self.task.splitted_data, 
                        self.args.batch_size, self.args.rand_percent, self.args.layer_idx, 

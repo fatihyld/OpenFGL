@@ -3,9 +3,7 @@ from openfgl.flcore.trainer import FGLTrainer
 import sys
 import torch
 import torch_geometric.data.data
-
 import torch_geometric.data.storage
-
 try:
     torch.serialization.add_safe_globals([
         torch_geometric.data.data.DataEdgeAttr,
@@ -13,7 +11,9 @@ try:
         torch_geometric.data.storage.GlobalStorage
     ])
 except AttributeError:
-    pass # Older torch versions don't have this, but also don't enforce weights_only=True by default
+    pass
+
+import datetime
 
 
 
@@ -26,7 +26,7 @@ class Args:
         self.simulation_mode = "subgraph_fl_louvain"
         self.num_clients = config.args.num_clients
         self.num_rounds = 50 # Enough rounds for convergence
-        self.fl_algorithm = "fedala"
+        self.fl_algorithm = "fedala_s" # FedALA-S mode
         self.model = ["gcn"]
         self.metrics = ["accuracy"]
         self.use_cuda = torch.cuda.is_available()
@@ -77,11 +77,11 @@ class Args:
         self.num_pre_loss = 5
 
 # "ogbn-products" # Removed because it causes Out Of Memory errors
-dataset_list = ["Cora", "CiteSeer", "PubMed", "Photo", "Computers", "Chameleon", "Actor", "Amazon-ratings"] 
+dataset_list = ["Cora", "CiteSeer", "PubMed", "Photo", "Computers",  "Chameleon", "Actor", "Amazon-ratings"] 
 results = {}
 
 for dataset in dataset_list:
-    print(f"\n{'='*20}\nBenchmark: {dataset}\n{'='*20}")
+    print(f"\n{'='*20}\nBenchmark: {dataset} (FedALA-S)\n{'='*20}")
     
     # Select candidate models based on dataset characteristics
     # Heterophilic datasets often benefit from MLP, GAT, or SGC
@@ -129,11 +129,10 @@ for dataset in dataset_list:
 
 
 # Generate timestamp string
-import datetime
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-output_filename = f"fedala_results_{timestamp}.txt"
+output_filename = f"fedala_s_results_{timestamp}.txt"
 
-print("\n\n=== Final Results ===")
+print("\n\n=== Final Results (FedALA-S) ===")
 print_output = f"{'Dataset':<15} | {'Test Accuracy':<15}\n"
 print_output += "-"*33 + "\n"
 for dataset, acc in results.items():
