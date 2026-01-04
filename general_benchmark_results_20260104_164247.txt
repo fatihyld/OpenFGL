@@ -1,0 +1,194 @@
+Dataset         | Clients  | Algorithm       | Test Accuracy  
+------------------------------------------------------------
+Cora            | 5        | fedavg          | 0.8178
+Cora            | 5        | fedprox         | 0.8242
+Cora            | 5        | scaffold        | 0.6821
+Cora            | 5        | moon            | 0.8223
+Cora            | 5        | fedproto        | 0.8023
+Cora            | 5        | fedala          | 0.8169
+Cora            | 5        | fedala_s        | 0.8233
+------------------------------------------------------------
+Cora            | 10       | fedavg          | 0.7990
+Cora            | 10       | fedprox         | 0.8062
+Cora            | 10       | scaffold        | 0.7362
+Cora            | 10       | moon            | 0.8026
+Cora            | 10       | fedproto        | 0.7918
+Cora            | 10       | fedala          | 0.8071
+Cora            | 10       | fedala_s        | 0.8116
+------------------------------------------------------------
+Cora            | 20       | fedavg          | 0.7740
+Cora            | 20       | fedprox         | 0.7713
+Cora            | 20       | scaffold        | 0.7422
+Cora            | 20       | moon            | 0.7774
+Cora            | 20       | fedproto        | 0.7484
+Cora            | 20       | fedala          | 0.7721
+Cora            | 20       | fedala_s        | 0.7704
+------------------------------------------------------------
+CiteSeer        | 5        | fedavg          | 0.6995
+CiteSeer        | 5        | fedprox         | 0.6987
+CiteSeer        | 5        | scaffold        | 0.7263
+CiteSeer        | 5        | moon            | 0.7166
+CiteSeer        | 5        | fedproto        | 0.6727
+CiteSeer        | 5        | fedala          | 0.6898
+CiteSeer        | 5        | fedala_s        | 0.7077
+------------------------------------------------------------
+CiteSeer        | 10       | fedavg          | 0.7065
+CiteSeer        | 10       | fedprox         | 0.7132
+CiteSeer        | 10       | scaffold        | 0.7227
+CiteSeer        | 10       | moon            | 0.7280
+CiteSeer        | 10       | fedproto        | 0.6452
+CiteSeer        | 10       | fedala          | 0.7073
+CiteSeer        | 10       | fedala_s        | 0.7050
+------------------------------------------------------------
+CiteSeer        | 20       | fedavg          | 0.6538
+CiteSeer        | 20       | fedprox         | 0.6574
+CiteSeer        | 20       | scaffold        | 0.7094
+CiteSeer        | 20       | moon            | 0.6834
+CiteSeer        | 20       | fedproto        | 0.6118
+CiteSeer        | 20       | fedala          | 0.6588
+CiteSeer        | 20       | fedala_s        | 0.6574
+------------------------------------------------------------
+PubMed          | 5        | fedavg          | 0.8547
+PubMed          | 5        | fedprox         | 0.8559
+PubMed          | 5        | scaffold        | 0.6649
+PubMed          | 5        | moon            | 0.8538
+PubMed          | 5        | fedproto        | 0.8492
+PubMed          | 5        | fedala          | 0.8566
+PubMed          | 5        | fedala_s        | 0.8572
+------------------------------------------------------------
+PubMed          | 10       | fedavg          | 0.8199
+PubMed          | 10       | fedprox         | 0.8237
+PubMed          | 10       | scaffold        | 0.7456
+PubMed          | 10       | moon            | 0.8216
+PubMed          | 10       | fedproto        | 0.8375
+PubMed          | 10       | fedala          | 0.8312
+PubMed          | 10       | fedala_s        | 0.8346
+------------------------------------------------------------
+PubMed          | 20       | fedavg          | 0.8263
+PubMed          | 20       | fedprox         | 0.8270
+PubMed          | 20       | scaffold        | 0.7204
+PubMed          | 20       | moon            | 0.8252
+PubMed          | 20       | fedproto        | 0.8249
+PubMed          | 20       | fedala          | 0.8345
+PubMed          | 20       | fedala_s        | 0.8366
+------------------------------------------------------------
+Photo           | 5        | fedavg          | 0.8830
+Photo           | 5        | fedprox         | 0.8892
+Photo           | 5        | scaffold        | 0.6868
+Photo           | 5        | moon            | 0.8830
+Photo           | 5        | fedproto        | 0.6465
+Photo           | 5        | fedala          | 0.9145
+Photo           | 5        | fedala_s        | 0.9136
+------------------------------------------------------------
+Photo           | 10       | fedavg          | 0.8690
+Photo           | 10       | fedprox         | 0.8680
+Photo           | 10       | scaffold        | 0.7433
+Photo           | 10       | moon            | 0.8645
+Photo           | 10       | fedproto        | 0.7665
+Photo           | 10       | fedala          | 0.8910
+Photo           | 10       | fedala_s        | 0.8923
+------------------------------------------------------------
+Photo           | 20       | fedavg          | 0.8653
+Photo           | 20       | fedprox         | 0.8736
+Photo           | 20       | scaffold        | 0.7578
+Photo           | 20       | moon            | 0.8583
+Photo           | 20       | fedproto        | 0.8056
+Photo           | 20       | fedala          | 0.8845
+Photo           | 20       | fedala_s        | 0.8848
+------------------------------------------------------------
+Computers       | 5        | fedavg          | 0.8394
+Computers       | 5        | fedprox         | 0.7679
+Computers       | 5        | scaffold        | 0.5516
+Computers       | 5        | moon            | 0.8461
+Computers       | 5        | fedproto        | 0.5297
+Computers       | 5        | fedala          | 0.8681
+Computers       | 5        | fedala_s        | 0.8550
+------------------------------------------------------------
+Computers       | 10       | fedavg          | 0.8062
+Computers       | 10       | fedprox         | 0.8192
+Computers       | 10       | scaffold        | 0.6640
+Computers       | 10       | moon            | 0.7647
+Computers       | 10       | fedproto        | 0.6876
+Computers       | 10       | fedala          | 0.8358
+Computers       | 10       | fedala_s        | 0.8533
+------------------------------------------------------------
+Computers       | 20       | fedavg          | 0.8225
+Computers       | 20       | fedprox         | 0.7992
+Computers       | 20       | scaffold        | 0.6587
+Computers       | 20       | moon            | 0.7726
+Computers       | 20       | fedproto        | 0.6985
+Computers       | 20       | fedala          | 0.8209
+Computers       | 20       | fedala_s        | 0.8480
+------------------------------------------------------------
+Chameleon       | 5        | fedavg          | 0.5332
+Chameleon       | 5        | fedprox         | 0.5248
+Chameleon       | 5        | scaffold        | 0.3809
+Chameleon       | 5        | moon            | 0.5076
+Chameleon       | 5        | fedproto        | 0.4304
+Chameleon       | 5        | fedala          | 0.5119
+Chameleon       | 5        | fedala_s        | 0.5139
+------------------------------------------------------------
+Chameleon       | 10       | fedavg          | 0.5042
+Chameleon       | 10       | fedprox         | 0.5462
+Chameleon       | 10       | scaffold        | 0.4473
+Chameleon       | 10       | moon            | 0.4874
+Chameleon       | 10       | fedproto        | 0.4563
+Chameleon       | 10       | fedala          | 0.5379
+Chameleon       | 10       | fedala_s        | 0.5316
+------------------------------------------------------------
+Chameleon       | 20       | fedavg          | 0.4819
+Chameleon       | 20       | fedprox         | 0.5044
+Chameleon       | 20       | scaffold        | 0.3845
+Chameleon       | 20       | moon            | 0.4717
+Chameleon       | 20       | fedproto        | 0.4178
+Chameleon       | 20       | fedala          | 0.4926
+Chameleon       | 20       | fedala_s        | 0.4861
+------------------------------------------------------------
+Actor           | 5        | fedavg          | 0.3421
+Actor           | 5        | fedprox         | 0.3551
+Actor           | 5        | scaffold        | 0.3138
+Actor           | 5        | moon            | 0.3536
+Actor           | 5        | fedproto        | 0.3101
+Actor           | 5        | fedala          | 0.3609
+Actor           | 5        | fedala_s        | 0.3520
+------------------------------------------------------------
+Actor           | 10       | fedavg          | 0.3516
+Actor           | 10       | fedprox         | 0.3453
+Actor           | 10       | scaffold        | 0.2827
+Actor           | 10       | moon            | 0.3511
+Actor           | 10       | fedproto        | 0.3078
+Actor           | 10       | fedala          | 0.3375
+Actor           | 10       | fedala_s        | 0.3396
+------------------------------------------------------------
+Actor           | 20       | fedavg          | 0.3317
+Actor           | 20       | fedprox         | 0.3312
+Actor           | 20       | scaffold        | 0.3090
+Actor           | 20       | moon            | 0.3421
+Actor           | 20       | fedproto        | 0.3035
+Actor           | 20       | fedala          | 0.3374
+Actor           | 20       | fedala_s        | 0.3250
+------------------------------------------------------------
+Amazon-ratings  | 5        | fedavg          | 0.4017
+Amazon-ratings  | 5        | fedprox         | 0.4059
+Amazon-ratings  | 5        | scaffold        | 0.3675
+Amazon-ratings  | 5        | moon            | 0.4058
+Amazon-ratings  | 5        | fedproto        | 0.4227
+Amazon-ratings  | 5        | fedala          | 0.4125
+Amazon-ratings  | 5        | fedala_s        | 0.4089
+------------------------------------------------------------
+Amazon-ratings  | 10       | fedavg          | 0.4070
+Amazon-ratings  | 10       | fedprox         | 0.4071
+Amazon-ratings  | 10       | scaffold        | 0.3720
+Amazon-ratings  | 10       | moon            | 0.4037
+Amazon-ratings  | 10       | fedproto        | 0.4488
+Amazon-ratings  | 10       | fedala          | 0.4130
+Amazon-ratings  | 10       | fedala_s        | 0.4122
+------------------------------------------------------------
+Amazon-ratings  | 20       | fedavg          | 0.4091
+Amazon-ratings  | 20       | fedprox         | 0.4118
+Amazon-ratings  | 20       | scaffold        | 0.3742
+Amazon-ratings  | 20       | moon            | 0.4147
+Amazon-ratings  | 20       | fedproto        | 0.4745
+Amazon-ratings  | 20       | fedala          | 0.4230
+Amazon-ratings  | 20       | fedala_s        | 0.4229
+------------------------------------------------------------

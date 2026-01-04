@@ -1,0 +1,42 @@
+====================================================================================================
+FEDALA VARIANTS BENCHMARK - SUMMARY ANALYSIS
+====================================================================================================
+
+================================================================================
+1. OVERALL AVERAGE ACCURACY BY ALGORITHM
+================================================================================
+fedavg            : 0.6528
+fedprox           : 0.6586
+fedala            : 0.6777
+fedala_s          : 0.6787
+fedala_prox       : 0.6819
+fedala_momentum   : 0.6698
+fedala_complete   : 0.6772
+
+Ranking (best to worst):
+  1. fedala_prox       : 0.6819
+  2. fedala_s          : 0.6787
+  3. fedala            : 0.6777
+  4. fedala_complete   : 0.6772
+  5. fedala_momentum   : 0.6698
+  6. fedprox           : 0.6586
+  7. fedavg            : 0.6528
+
+================================================================================
+2. WIN COUNT ANALYSIS
+================================================================================
+  fedala_complete   : 8 wins
+  fedala_s          : 7 wins
+  fedala            : 5 wins
+  fedala_prox       : 4 wins
+  fedavg            : 0 wins
+  fedprox           : 0 wins
+  fedala_momentum   : 0 wins
+
+================================================================================
+3. IMPROVEMENT OVER BASELINES
+================================================================================
+fedala_s          : 0.6787 (+3.97% vs FedAvg, +0.15% vs FedALA)
+fedala_prox       : 0.6819 (+4.45% vs FedAvg, +0.62% vs FedALA)
+fedala_momentum   : 0.6698 (+2.60% vs FedAvg, -1.16% vs FedALA)
+fedala_complete   : 0.6772 (+3.74% vs FedAvg, -0.07% vs FedALA)

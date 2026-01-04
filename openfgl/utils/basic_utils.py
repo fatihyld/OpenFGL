@@ -115,7 +115,16 @@ def load_client(args, client_id, data, data_dir, message_pool, device):
     elif args.fl_algorithm == "fedala":
         from openfgl.flcore.fedala.client import FedALAClient
         return FedALAClient(args, client_id, data, data_dir, message_pool, device)
-    
+    elif args.fl_algorithm == "fedala_prox":
+        from openfgl.flcore.fedala_prox.client import FedALAProxClient
+        return FedALAProxClient(args, client_id, data, data_dir, message_pool, device)
+    elif args.fl_algorithm == "fedala_momentum":
+        from openfgl.flcore.fedala_momentum.client import FedALAMomentumClient
+        return FedALAMomentumClient(args, client_id, data, data_dir, message_pool, device)
+    elif args.fl_algorithm == "fedala_complete":
+        from openfgl.flcore.fedala_complete.client import FedALACompleteClient
+        return FedALACompleteClient(args, client_id, data, data_dir, message_pool, device)
+
 def load_server(args, global_data, data_dir, message_pool, device):
     """
     Loads and returns an instance of a server based on the federated learning algorithm specified in the arguments.
@@ -193,7 +202,16 @@ def load_server(args, global_data, data_dir, message_pool, device):
     elif args.fl_algorithm == "fedala":
         from openfgl.flcore.fedala.server import FedALAServer
         return FedALAServer(args, global_data, data_dir, message_pool, device)
-    
+    elif args.fl_algorithm == "fedala_prox":
+        from openfgl.flcore.fedala_prox.server import FedALAProxServer
+        return FedALAProxServer(args, global_data, data_dir, message_pool, device)
+    elif args.fl_algorithm == "fedala_momentum":
+        from openfgl.flcore.fedala_momentum.server import FedALAMomentumServer
+        return FedALAMomentumServer(args, global_data, data_dir, message_pool, device)
+    elif args.fl_algorithm == "fedala_complete":
+        from openfgl.flcore.fedala_complete.server import FedALACompleteServer
+        return FedALACompleteServer(args, global_data, data_dir, message_pool, device)
+
 def load_optim(args):
     """
     Loads and returns an optimizer class based on the specification in the arguments.

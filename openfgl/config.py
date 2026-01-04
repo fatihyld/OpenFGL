@@ -17,7 +17,7 @@ supported_graph_fl_task = ["graph_cls", "graph_reg"]
 supported_subgraph_fl_task = ["node_cls", "link_pred", "node_clust"]
 
 
-supported_fl_algorithm = ["isolate", "fedavg", "fedprox", "scaffold", "moon", "feddc", "fedproto", "fedtgp", "fedpub", "fedstar", "fedgta", "fedtad", "gcfl_plus", "fedsage_plus", "adafgl", "feddep", "fggp", "fgssl", "fedgl", "fedala", "fedala_s"]
+supported_fl_algorithm = ["isolate", "fedavg", "fedprox", "scaffold", "moon", "feddc", "fedproto", "fedtgp", "fedpub", "fedstar", "fedgta", "fedtad", "gcfl_plus", "fedsage_plus", "adafgl", "feddep", "fggp", "fgssl", "fedgl", "fedala", "fedala_s", "fedala_prox", "fedala_momentum", "fedala_complete"]
 
 
 supported_metrics = ["accuracy", "precision", "f1", "recall", "auc", "ap", "clustering_accuracy", "nmi", "ari"]
@@ -66,6 +66,10 @@ parser.add_argument("--eta", type=float, default=1.0)
 parser.add_argument("--threshold", type=float, default=0.1)
 parser.add_argument("--num_pre_loss", type=int, default=10)
 parser.add_argument("--ala_beta", type=float, default=0.0, help="Beta for FedALA-S temporal smoothing")
+parser.add_argument("--ala_mu", type=float, default=0.01, help="Proximal regularization coefficient for FedALA-Prox")
+parser.add_argument("--ala_momentum", type=float, default=0.9, help="Momentum coefficient for FedALA-Momentum")
+parser.add_argument("--ala_meta_init", type=bool, default=True, help="Enable meta-learning initialization for FedALA-Complete")
+parser.add_argument("--ala_meta_init_epochs", type=int, default=3, help="Reduced epochs with meta-init")
 
 
 # simulation settings

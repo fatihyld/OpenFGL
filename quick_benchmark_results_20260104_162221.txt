@@ -1,0 +1,13 @@
+Quick Benchmark Results - Cora - 10 clients
+Timestamp: 20260104_162221
+========================================
+
+Algorithm       | Test Accuracy  
+-----------------------------------
+fedavg          | 0.8035
+fedprox         | 0.8071
+scaffold        | 0.7289
+moon            | 0.8044
+fedproto        | 0.7829
+fedala          | 0.8098
+fedala_s        | 0.8089
